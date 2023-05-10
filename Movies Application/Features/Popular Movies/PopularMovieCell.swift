@@ -13,7 +13,7 @@ class PopularMovieCell: UICollectionViewCell {
 		}
 	}
 	
-	private let contentController = UIHostingController<ContentView>(rootView: .init(summary: .example))
+	private let contentController = UIHostingController<ContentView>(rootView: .init(summary: .examples.first!))
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
