@@ -10,13 +10,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
 	
 	// swiftlint:disable:next discouraged_optional_collection
 	func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-		let window = UIWindow()
+		window = UIWindow()
+		let popularMoviesViewController = PopularMoviesViewController()
+		let navigationController = UINavigationController(rootViewController: popularMoviesViewController)
+
+		window?.rootViewController = navigationController
+		window?.makeKeyAndVisible()
 		
-		self.window = window
-		window.makeKeyAndVisible()
-		
-		fatalError("window.rootViewController needs to be set")
-		
-		return false
+		return true
 	}
 }
