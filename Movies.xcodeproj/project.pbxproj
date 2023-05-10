@@ -10,6 +10,7 @@
 		98E6C3CB2680FA0800536045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6C3CA2680FA0800536045 /* AppDelegate.swift */; };
 		98E6C3D42680FA0900536045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E6C3D32680FA0900536045 /* Assets.xcassets */; };
 		98E6C3D72680FA0900536045 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E6C3D52680FA0900536045 /* LaunchScreen.storyboard */; };
+		AF44D1722A0BA3E50065EF6A /* UserScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44D1712A0BA3E50065EF6A /* UserScoreView.swift */; };
 		EA59CD02270F3F7A00C69D6C /* PopularMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59CD01270F3F7A00C69D6C /* PopularMoviesViewController.swift */; };
 		EA59CD04270F3FA500C69D6C /* PopularMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59CD03270F3FA500C69D6C /* PopularMovieCell.swift */; };
 		EA59CD06270F479700C69D6C /* PopularMovieCellContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59CD05270F479700C69D6C /* PopularMovieCellContentView.swift */; };
@@ -49,6 +50,7 @@
 		98E6C3D32680FA0900536045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98E6C3D82680FA0900536045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98EB2FDD268DDBDF00D83DBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF44D1712A0BA3E50065EF6A /* UserScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserScoreView.swift; sourceTree = "<group>"; };
 		EA377C4C273AE6AC006BEE95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA59CD01270F3F7A00C69D6C /* PopularMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesViewController.swift; sourceTree = "<group>"; };
 		EA59CD03270F3FA500C69D6C /* PopularMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieCell.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				EA59CD01270F3F7A00C69D6C /* PopularMoviesViewController.swift */,
 				EA59CD03270F3FA500C69D6C /* PopularMovieCell.swift */,
 				EA59CD05270F479700C69D6C /* PopularMovieCellContentView.swift */,
+				AF44D1712A0BA3E50065EF6A /* UserScoreView.swift */,
 			);
 			path = "Popular Movies";
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				EA977F7C279AE54500D76F98 /* MovieDetails.swift in Sources */,
 				EA59CD02270F3F7A00C69D6C /* PopularMoviesViewController.swift in Sources */,
 				EA59CD04270F3FA500C69D6C /* PopularMovieCell.swift in Sources */,
+				AF44D1722A0BA3E50065EF6A /* UserScoreView.swift in Sources */,
 				EA59CD06270F479700C69D6C /* PopularMovieCellContentView.swift in Sources */,
 				EA977F7A279AE54500D76F98 /* MovieSummary.swift in Sources */,
 				EA977F7B279AE54500D76F98 /* MoviesClient.swift in Sources */,
