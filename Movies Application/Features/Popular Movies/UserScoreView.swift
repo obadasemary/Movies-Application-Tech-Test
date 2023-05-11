@@ -1,8 +1,5 @@
 //
-//  UserScoreView.swift
-//  MoviesUI
-//
-//  Created by Abdelrahman Mohamed on 10.05.2023.
+//  Copyright © Modus Create. All rights reserved.
 //
 
 import SwiftUI
