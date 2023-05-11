@@ -27,7 +27,6 @@
 		AF44D1B52A0C19B20065EF6A /* RemoteContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44D1992A0C19B10065EF6A /* RemoteContext.swift */; };
 		AF44D1B62A0C19B20065EF6A /* RemoteErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44D19A2A0C19B10065EF6A /* RemoteErrorHandler.swift */; };
 		AF44D1B72A0C19B20065EF6A /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44D19B2A0C19B10065EF6A /* SessionManager.swift */; };
-		AF44D1B92A0C19B20065EF6A /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44D19D2A0C19B10065EF6A /* UserDefaultsExtension.swift */; };
 		AF44D1BC2A0C1DFF0065EF6A /* PopularMoviesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44D1BB2A0C1DFF0065EF6A /* PopularMoviesVM.swift */; };
 		AF8F05A92A0D7982003F6D62 /* MoviesApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F05A82A0D7982003F6D62 /* MoviesApplicationTests.swift */; };
 		EA59CD02270F3F7A00C69D6C /* PopularMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA59CD01270F3F7A00C69D6C /* PopularMoviesViewController.swift */; };
@@ -98,7 +97,6 @@
 		AF44D1992A0C19B10065EF6A /* RemoteContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteContext.swift; sourceTree = "<group>"; };
 		AF44D19A2A0C19B10065EF6A /* RemoteErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteErrorHandler.swift; sourceTree = "<group>"; };
 		AF44D19B2A0C19B10065EF6A /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		AF44D19D2A0C19B10065EF6A /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		AF44D1BB2A0C1DFF0065EF6A /* PopularMoviesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesVM.swift; sourceTree = "<group>"; };
 		AF8F05A62A0D7981003F6D62 /* MoviesApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8F05A82A0D7982003F6D62 /* MoviesApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesApplicationTests.swift; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 				AF44D18F2A0C19B10065EF6A /* URLRouter */,
 				AF44D1922A0C19B10065EF6A /* Data Manager */,
 				AF44D1962A0C19B10065EF6A /* Remote Manager */,
-				AF44D19D2A0C19B10065EF6A /* UserDefaultsExtension.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -497,7 +494,6 @@
 				AF44D1AF2A0C19B20065EF6A /* Router.swift in Sources */,
 				EA977F7C279AE54500D76F98 /* MovieDetails.swift in Sources */,
 				AF44D1BC2A0C1DFF0065EF6A /* PopularMoviesVM.swift in Sources */,
-				AF44D1B92A0C19B20065EF6A /* UserDefaultsExtension.swift in Sources */,
 				EA59CD02270F3F7A00C69D6C /* PopularMoviesViewController.swift in Sources */,
 				EA59CD04270F3FA500C69D6C /* PopularMovieCell.swift in Sources */,
 				AF44D1B62A0C19B20065EF6A /* RemoteErrorHandler.swift in Sources */,
