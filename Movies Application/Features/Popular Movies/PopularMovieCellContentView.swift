@@ -10,33 +10,31 @@ extension PopularMovieCell {
 		
 		var body: some View {
 			ZStack(alignment: .bottomLeading) {
-				//				AsyncImage(url: URL(string: "")) { image in
-				//						image.resizable()
-				//								.aspectRatio(contentMode: .fill)
-				//								.frame(width: 160, height: 250)
-				//								.cornerRadius(30)
-				//				} placeholder: {
-				//						Rectangle()
-				//								.foregroundColor(.gray.opacity(0.3))
-				//								.frame(width: 160, height: 250)
-				//								.cornerRadius(30)
-				//				}
-				Image(summary.posterPath)
-					.resizable()
-					.aspectRatio(contentMode: .fill)
-					.frame(width: UIScreen.main.bounds.width / 2 - 20, height: UIScreen.main.bounds.width / 2 * 1.5 - 20)
-					.cornerRadius(30)
 
-				HStack(alignment: .center) {
+				AsyncImage(url: summary.thumbnailURL) { image in
+					// Image view configuration
+					image.resizable()
+						.aspectRatio(contentMode: .fill)
+						.frame(width: UIScreen.main.bounds.width / 2 - 20, height: UIScreen.main.bounds.width / 2 * 1.5 - 20)
+						.cornerRadius(30)
+				} placeholder: {
+					// Placeholder view configuration
+					Rectangle()
+						.foregroundColor(.gray.opacity(0.3))
+						.frame(width: UIScreen.main.bounds.width / 2 - 20, height: UIScreen.main.bounds.width / 2 * 1.5 - 20)
+						.cornerRadius(30)
+				}
+
+				HStack(alignment: .bottom) {
 
 					VStack(alignment: .leading) {
-						Text(summary.title)
-							.font(.caption)
+						Text(summary.title ?? "")
+							.font(.title3)
 							.bold()
 
-						Text(summary.overview)
+						Text(summary.overview ?? "")
 							.font(.caption2)
-							.italic()
+							.bold()
 							.multilineTextAlignment(.leading)
 					}
 					.lineLimit(3)
@@ -45,7 +43,9 @@ extension PopularMovieCell {
 					.shadow(radius: 20)
 					.padding(.leading)
 
-					UserScoreView(progress: CGFloat(summary.voteAverage), boxSize: 50)
+					if summary.isPopular {
+						UserScoreView(progress: CGFloat(summary.voteAverage ?? 0), boxSize: 50)
+					}
 				}
 			}
 			.padding()
