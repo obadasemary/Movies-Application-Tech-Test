@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +36,39 @@
                BlueprintIdentifier = "EAB67628270E27E300CA37A9"
                BuildableName = "MoviesAPITests.xctest"
                BlueprintName = "MoviesAPITests"
+               ReferencedContainer = "container:Movies.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AF9EEE822A0D31E100806895"
+               BuildableName = "Movies ApplicationTests.xctest"
+               BlueprintName = "Movies ApplicationTests"
+               ReferencedContainer = "container:Movies.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AFCF7C652A0D37FD000559AB"
+               BuildableName = "MoviesTests.xctest"
+               BlueprintName = "MoviesTests"
+               ReferencedContainer = "container:Movies.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AF8F05A52A0D7981003F6D62"
+               BuildableName = "MoviesApplicationTests.xctest"
+               BlueprintName = "MoviesApplicationTests"
                ReferencedContainer = "container:Movies.xcodeproj">
             </BuildableReference>
          </TestableReference>
