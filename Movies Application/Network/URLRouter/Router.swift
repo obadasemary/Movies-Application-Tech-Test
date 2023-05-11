@@ -15,7 +15,7 @@ var defaultUrlParams: [String: String] {
 enum apiURLConstants {
     
     static let apiURL = "https://api.themoviedb.org/3"
-    static let apiKey = "44258121c0a1dbc3f3859f7f4b32bb07"
+    static let apiKey = "bf718d4dd8b23985d9c3edbcfd440a27"
 }
 
 
