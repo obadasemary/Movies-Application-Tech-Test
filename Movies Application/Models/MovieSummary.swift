@@ -4,23 +4,38 @@
 
 import Foundation
 
+// MARK: - MovieListResponse
+public struct MovieListResponse: Codable {
+
+		let page, totalResults, totalPages: Int?
+		let results: [MovieSummary]?
+
+		enum CodingKeys: String, CodingKey {
+				case page
+				case totalResults = "total_results"
+				case totalPages = "total_pages"
+				case results
+		}
+}
+
+
 public struct MovieSummary: Codable {
-	public let id: Int
-	public let overview: String
-	public let posterPath: String
-	public let releaseDate: String
-	public let title: String
-	public let voteAverage: Double
+	public let id: Int?
+	public let overview: String?
+	public let posterPath: String?
+	public let releaseDate: String?
+	public let title: String?
+	public let voteAverage: Double?
 	
 	public var isPopular: Bool {
-		voteAverage > 7.5
+		voteAverage ?? 0 >= 7.0
 	}
 	
 	public var thumbnailURL: URL {
 		guard let baseURL = URL(string: "https://image.tmdb.org/t/p/w300") else {
 			preconditionFailure("Unable to build URL")
 		}
-		return baseURL.appendingPathComponent(posterPath)
+		return baseURL.appendingPathComponent(posterPath ?? "")
 	}
 	
 	enum CodingKeys: String, CodingKey {
