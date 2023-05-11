@@ -3,11 +3,15 @@
 //
 
 import UIKit
+import Combine
 
 private let reuseIdentifier = "Cell"
 
 class PopularMoviesViewController: UICollectionViewController {
 
+	@Published var vm = PopularMoviesVM(repo: Injector.mainServiceRepo)
+
+	private var cencellableBag = [AnyCancellable]()
 	init() {
 		let layout = UICollectionViewFlowLayout()
 		layout.sectionInset = .zero
@@ -26,12 +30,22 @@ class PopularMoviesViewController: UICollectionViewController {
 	private func setupCollectionViewLayout() -> UICollectionViewLayout {
 		let layout = UICollectionViewCompositionalLayout { sectionIndex, environment -> NSCollectionLayoutSection? in
 			// Define item size
-			let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1))
+			let itemSize = NSCollectionLayoutSize(
+				widthDimension: .fractionalWidth(0.5),
+				heightDimension: .fractionalHeight(1)
+			)
 			let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
 			// Define group size
-			let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(UIScreen.main.bounds.width / 2 * 1.5))
-			let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+			let groupSize = NSCollectionLayoutSize(
+				widthDimension: .fractionalWidth(1),
+				heightDimension: .absolute(UIScreen.main.bounds.width / 2 * 1.5)
+			)
+			let group = NSCollectionLayoutGroup.horizontal(
+				layoutSize: groupSize,
+				subitem: item,
+				count: 2
+			)
 			group.interItemSpacing = .fixed(20) // Adjust the horizontal spacing between cells
 
 			// Create section
@@ -54,13 +68,33 @@ class PopularMoviesViewController: UICollectionViewController {
 
 		return layout
 	}
-	
+
+	private func setupLoadingView(isLoading: Bool) {
+		title = isLoading ? "Loading ..." : "Popular"
+	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		navigationItem.title = "Popular"
 		navigationItem.largeTitleDisplayMode = .always
-
 		setupCollectionView()
+		subscribeToViewModel()
+		vm.getPopularMovieList()
+	}
+
+	private func subscribeToViewModel() {
+		vm.$popularMoviesIsLoadingPage
+			.receive(on: RunLoop.main)
+			.sink { [weak self] isLoading in
+				guard let self else { return }
+				self.setupLoadingView(isLoading: isLoading)
+			}.store(in: &cencellableBag)
+
+		vm.$popularMovies
+			.receive(on: RunLoop.main)
+			.sink { [weak self] moviesArray in
+				guard let self else { return }
+				self.collectionView.reloadData()
+			}.store(in: &cencellableBag)
 	}
 
 	@available(*, unavailable)
@@ -72,15 +106,22 @@ class PopularMoviesViewController: UICollectionViewController {
 extension PopularMoviesViewController {
 
 	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return MovieSummary.examples.count
+		return self.vm.popularMovies.count
 	}
 
+	override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+		let itemIndex = indexPath.item
+
+		let isLastItem = (vm.popularMovies.count - 1) == itemIndex
+
+		if isLastItem { vm.getPopularMovieList() }
+	}
 	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PopularMovieCell
 
 		// Configure the cell with the appropriate MovieSummary
-		let movieSummary = MovieSummary.examples[indexPath.item]
+		let movieSummary = self.vm.popularMovies[indexPath.item]
 		cell.summary = movieSummary
 
 		return cell
